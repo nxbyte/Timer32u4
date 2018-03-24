@@ -64,9 +64,11 @@ Low level 32u4 Timers are complicated. Here is a sample Arduino program that con
 | CLK / 8192	| 0xE    	|
 | CLK / 16384	| 0xF    	|
 
-Source 1: [AVR Interrupts](https://gist.github.com/psgs/e7ec757412c0b5cda60f854be57792fd)
+## Source
 
-Source 2: [Datasheet](https://cdn.sparkfun.com/datasheets/Dev/Arduino/Boards/ATMega32U4.pdf)
+- [AVR Interrupts](https://gist.github.com/psgs/e7ec757412c0b5cda60f854be57792fd)
+
+- [Datasheet](https://cdn.sparkfun.com/datasheets/Dev/Arduino/Boards/ATMega32U4.pdf)
 
 ## License
 

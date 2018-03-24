@@ -7,7 +7,7 @@ void setup() {
 
   Serial.begin(9600);
   
-  noInterrupts();
+  noInterrupts();                        // disable all interrupts
 
   // Timer 1
   TCNT1 = 0;                             // Set initial value
@@ -15,13 +15,13 @@ void setup() {
   TCCR1A = 0;                            // normal operation page 148 (mode0);
   TCCR1B = 0x3;                          // Set Timer4 prescaler to 64
   
-  // Timer 2
+  // Timer 3
   TCNT3 = 0;                             // Set initial value
   TIMSK3 = 0x01;                         // Enable/Disable Timer3
   TCCR3A = 0;                            // normal operation page 148 (mode0);
   TCCR3B = 0x5;                          // Set Timer4 prescaler to 1024
 
-  // Timer 3
+  // Timer 4
   TCNT4 = 0;                             // Set initial value
   TIMSK4 = (1<<TOIE4);                   // Enable/Disable Timer4
   TCCR4A = TCCR4C = TCCR4D = TCCR4E = 0; // normal operation page 148 (mode0);
@@ -36,13 +36,17 @@ void loop() {
 }
 
 ISR(TIMER1_OVF_vect) {
+  //TCNT1 = 0;                  // (Optional) Reset timer to a starting value
   Serial.println("Timer 1!");
 }
 
 ISR(TIMER3_OVF_vect) {
+  //TCNT3 = 0;                  // (Optional) Reset timer to a starting value
   Serial.println("Timer 3!");
 }
 
 ISR(TIMER4_OVF_vect) {
+  //TCNT4 = 0;                  // (Optional) Reset timer to a starting value
   Serial.println("Timer 4!");
 }
+
